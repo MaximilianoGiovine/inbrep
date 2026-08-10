@@ -60,11 +60,16 @@ Donde `CR_PAT` es un token personal con `read:packages` scope almacenado como se
 6. Deploy the stack. If you want to deploy from the VPS CLI instead:
 
 ```bash
-# pull latest image
+# pull latest image (if using published image)
 docker pull ghcr.io/<owner>/<repo>:latest
 
-# run with docker-compose
+# run with docker-compose (this will build on the VPS when `build:` is present)
 docker compose -f docker-compose.prod.yml up -d
+
+Nota: este repositorio está preconfigurado para que, cuando despliegues desde el
+repositorio en Portainer, la construcción se ejecute en el VPS y el servicio quedará
+expuesto en el puerto `3005` del host (mapea al puerto `3000` del contenedor).
+En Nginx Proxy Manager, configura el `Forward Port` a `3005`.
 ```
 
 7. In Nginx Proxy Manager create a Proxy Host that forwards your domain to `inbrep-web:3000` on the `proxy` network and enable SSL (Let's Encrypt).

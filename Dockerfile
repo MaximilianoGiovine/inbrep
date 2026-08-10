@@ -8,7 +8,9 @@ COPY package.json package-lock.json* ./
 # Use Debian-slim so native modules can compile if needed. Install build
 # dependencies commonly required by native modules during `npm install`.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-	build-essential python3 ca-certificates && rm -rf /var/lib/apt/lists/*
+	build-essential python3 ca-certificates pkg-config \
+	libvips-dev libjpeg-dev libpng-dev libcairo2-dev librsvg2-dev \
+	&& rm -rf /var/lib/apt/lists/*
 
 # Use `npm ci` when a lockfile is present (reproducible installs).
 # If there's no lockfile (Portainer may build from repo without it), fall back
