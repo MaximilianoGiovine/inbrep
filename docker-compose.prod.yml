@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  inbrep-web:
+    image: ghcr.io/${GITHUB_REPOSITORY:-your-org/inbrep-web}:latest
+    container_name: inbrep-web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
