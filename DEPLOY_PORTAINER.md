@@ -25,6 +25,9 @@ docker network create proxy
 - En Portainer crea un nuevo Stack y usa `docker-compose.prod.yml` (ajusta `image:` si no usas GHCR env vars).
 - Despliega el Stack. Portainer descargará la imagen de GHCR.
 
+- En Portainer crea un nuevo Stack y usa `docker-compose.prod.yml`. Este archivo ahora incluye `build: .` para que Portainer construya la imagen en el VPS desde el repositorio. Si prefieres usar la imagen publicada en GHCR, deja el `image:` apuntando a `ghcr.io/<owner>/<repo>:latest`.
+- Despliega el Stack. Si despliegas desde el repo, Portainer ejecutará la fase de build en el host y luego levantará el contenedor.
+
 Pasos concretos para desplegar desde este repo
 
 1. Subir el código a GitHub (asumiendo rama `main`):

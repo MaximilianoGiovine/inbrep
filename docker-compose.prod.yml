@@ -2,13 +2,22 @@ version: '3.8'
 
 services:
   inbrep-web:
+    # Build the image on the host (Portainer/VPS). Keeps compatibility with
+    # deploying directly from the repository. Portainer will run the build on
+    # the VPS when you deploy this compose file from the repo.
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Optional image tag - Portainer will still build, but this is helpful
+    # if you prefer to pull a prebuilt image instead. Replace with GHCR tag
+    # when using the published image workflow.
     image: ghcr.io/${GITHUB_REPOSITORY:-your-org/inbrep-web}:latest
     container_name: inbrep-web
     restart: always
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
+      NODE_ENV: production
     networks:
       - proxy
 
