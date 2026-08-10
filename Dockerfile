@@ -5,7 +5,11 @@ WORKDIR /app
 
 # Install deps
 COPY package.json package-lock.json* ./
-RUN npm ci --silent
+# Use `npm ci` when a lockfile is present (reproducible installs).
+# If there's no lockfile (Portainer may build from repo without it),
+# fall back to `npm install`. Also add `--legacy-peer-deps` to reduce
+# peer dependency failures on some hosts.
+RUN sh -c "if [ -f package-lock.json ]; then npm ci --silent; else npm install --silent --legacy-peer-deps; fi"
 
 # Build
 COPY . .
