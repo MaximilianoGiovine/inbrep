@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s · INBREP",
   },
   description:
-    "INBREP forma obreros fieles para la obra del Señor: Diplomatura en Biblia, Bachiller y Licenciatura en Teología, 100% virtual para Chile, Sudamérica y la América hispanohablante.",
+    "INBREP es una Comunidad Educativa Interdenominacional dedicada a la formación bíblica, teológica y ministerial, 100% virtual para Chile, Sudamérica y la América hispanohablante.",
 };
 
 export default function RootLayout({

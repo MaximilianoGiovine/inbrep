@@ -6,41 +6,115 @@ import Eyebrow from "@/components/Eyebrow";
 const STRIP = [
   "100% Virtual",
   "Sincrónico + On-demand",
+  "Comunidad Educativa Interdenominacional",
   "Chile · Sudamérica · Hispanoamérica",
-  "Diplomatura → Bachiller → Licenciatura",
 ];
 
-const PROGRAMS = [
+const PILARES = [
   {
-    name: "Diplomatura en Biblia",
-    desc: "El primer tramo del recorrido formativo: bases sólidas en Antiguo y Nuevo Testamento, interpretación bíblica y pensamiento cristiano.",
+    title: "Conocer las Escrituras",
+    desc: "Desarrollá una comprensión profunda de la Biblia, su historia, sus contextos, su mensaje y sus principales enseñanzas.",
   },
   {
-    name: "Bachiller en Teología",
-    desc: "Profundización en Teología Sistemática y Práctica, con foco en práctica ministerial y liderazgo dentro de la comunidad eclesial.",
+    title: "Pensar teológicamente",
+    desc: "Aprendé a relacionar las diferentes doctrinas cristianas, evaluar distintas perspectivas y formular convicciones bíblicas responsables.",
   },
   {
-    name: "Licenciatura en Teología",
-    desc: "El nivel de mayor alcance académico, conforme al plan de estudios establecido, para servir con excelencia y sana doctrina.",
+    title: "Crecer espiritualmente",
+    desc: "Buscamos que el conocimiento no permanezca solamente en el aula, sino que transforme nuestra relación con Dios, nuestro carácter y nuestra manera de vivir.",
+  },
+  {
+    title: "Servir a la Iglesia",
+    desc: "Estudiamos para servir. Cada programa procura fortalecer los dones, ministerios y responsabilidades que Dios ha confiado a sus hijos.",
   },
 ];
 
-const NEWS = [
+const PERFILES = [
+  "Miembros de iglesias que desean profundizar su fe.",
+  "Maestros y educadores cristianos.",
+  "Líderes y servidores.",
+  "Pastores y equipos ministeriales.",
+  "Plantadores de iglesias y misioneros.",
+  "Personas que se están preparando para el ministerio.",
+  "Creyentes que encuentran barreras geográficas, económicas, personales o ministeriales para acceder a otras oportunidades de formación.",
+];
+
+const TRAYECTOS = [
   {
-    tag: "Inscripciones",
-    title: "Ciclo académico 2026",
-    desc: "Estamos preparando el calendario con fechas de inicio de clases, exámenes y cierres.",
+    name: "Diplomaturas y trayectos integrales",
+    desc: "Programas sistemáticos para quienes desean desarrollar una formación bíblica y teológica amplia, progresiva y organizada.",
   },
   {
-    tag: "Seminarios",
-    title: "Encuentros y conferencias",
-    desc: "Muy pronto vas a poder ver acá los próximos seminarios y conferencias abiertas a la comunidad.",
+    name: "Certificados y especializaciones",
+    desc: "Recorridos enfocados en áreas específicas de la Biblia, los idiomas bíblicos, la teología y el ministerio.",
   },
   {
-    tag: "Convocatorias",
-    title: "Nuevas cohortes",
-    desc: "Estamos organizando la apertura de nuevas cohortes para los distintos programas de INBREP.",
+    name: "Cursos, actualizaciones y masterclasses",
+    desc: "Propuestas de menor duración para continuar aprendiendo, actualizar conocimientos y profundizar en temas relevantes para la Iglesia.",
   },
+];
+
+const AREAS = [
+  "Antiguo Testamento",
+  "Nuevo Testamento",
+  "Teología Sistemática",
+  "Hebreo y Griego",
+  "Hermenéutica y Exégesis",
+  "Historia de la Iglesia",
+  "Teología y Práctica Ministerial",
+  "Evangelismo y Misiones",
+  "Liderazgo y formación cristiana",
+];
+
+const RAZONES = [
+  {
+    title: "Fidelidad a las Escrituras",
+    desc: "La Biblia es la autoridad fundamental de nuestra enseñanza. Buscamos estudiarla con profundidad, responsabilidad y atención a su contexto.",
+  },
+  {
+    title: "Excelencia académica",
+    desc: "Promovemos el estudio serio, el pensamiento crítico y una formación teológica rigurosa, clara y aplicable.",
+  },
+  {
+    title: "Formación espiritual",
+    desc: "Creemos que el conocimiento de Dios debe conducirnos a una relación más profunda con Él y a una vida transformada por el Espíritu Santo.",
+  },
+  {
+    title: "Accesibilidad",
+    desc: "Trabajamos para acercar oportunidades de formación a personas de diferentes lugares, contextos y realidades.",
+  },
+  {
+    title: "Acompañamiento",
+    desc: "Queremos conocer a nuestros estudiantes, acompañar sus procesos y ayudarlos a integrar lo aprendido con su vida y servicio.",
+  },
+];
+
+const INICIATIVAS = [
+  {
+    name: "+INBREP",
+    desc: "Un espacio abierto de artículos, estudios, libros, devocionales, videos, pódcast, clases y otros recursos para continuar aprendiendo.",
+    cta: "Explorá +INBREP",
+    href: "/mas-inbrep",
+  },
+  {
+    name: "EBL — Escuela Bíblica Local",
+    desc: "Un programa que ayuda a las iglesias a desarrollar su propio espacio de formación bíblica mediante currículos, materiales, orientación pedagógica y diferentes modalidades de acompañamiento.",
+    cta: "Quiero implementar EBL en mi iglesia",
+    href: "/ebl",
+  },
+  {
+    name: "MissioDei",
+    desc: "Nuestra iniciativa dedicada a generar recursos, formación y acompañamiento para la misión, la plantación de iglesias y el servicio a las comunidades locales.",
+    cta: "Conocé MissioDei",
+    href: "/missio-dei",
+  },
+];
+
+const NOVEDADES = [
+  "Apertura de nuevas materias y programas.",
+  "Cursos, masterclasses y conferencias.",
+  "Artículos, videos, pódcast y publicaciones.",
+  "Convocatorias y oportunidades de participación.",
 ];
 
 export default function Home() {
@@ -55,28 +129,26 @@ export default function Home() {
           <div className="max-w-2xl">
             <Eyebrow>Instituto Bíblico Renacer Pentecostal</Eyebrow>
             <h1 className="mt-6 text-balance font-display text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-6xl">
-              Formando obreros fieles para la obra del Señor
+              Crecemos en su Palabra con el poder de su Espíritu
             </h1>
             <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-cream/75">
-              Una comunidad educativa interdenominacional que une excelencia
-              académica y profunda vida espiritual, para pastores, líderes y
-              familias de toda la América hispanohablante.
+              INBREP es el Instituto Bíblico Renacer Pentecostal, una Comunidad
+              Educativa Interdenominacional dedicada a acercar formación bíblica,
+              teológica y ministerial de calidad a quienes desean conocer
+              profundamente las Escrituras y servir mejor a la Iglesia.
+            </p>
+            <p className="mt-4 max-w-xl text-balance leading-relaxed text-cream/70">
+              Formamos estudiantes, maestros, líderes, pastores y servidores
+              mediante una propuesta que integra fidelidad bíblica, excelencia
+              académica y una profunda vida espiritual.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button href="/programas" variant="primary">
                 Conocé nuestra oferta académica
               </Button>
               <Button href="/admision" variant="secondary">
-                Sumate a INBREP
+                Quiero estudiar en INBREP
               </Button>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-cream/60">
-              <Link href="/admision" className="underline decoration-sun/50 underline-offset-4 hover:text-cream">
-                Ir a inscripción
-              </Link>
-              <Link href="/donar" className="underline decoration-sun/50 underline-offset-4 hover:text-cream">
-                Quiero donar
-              </Link>
             </div>
           </div>
 
@@ -90,12 +162,14 @@ export default function Home() {
             />
             <div className="relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
               <p className="font-display text-2xl italic leading-snug text-sun sm:text-3xl">
-                &ldquo;Formamos obreros para la obra del Reino&rdquo;
+                &ldquo;Estudiar teología es aprender a interpretar
+                responsablemente las Escrituras y prepararnos para servir a
+                la Iglesia&rdquo;
               </p>
               <div className="mt-8 h-px w-full bg-white/10" />
               <p className="mt-8 text-sm leading-relaxed text-cream/70">
-                Comprometidos con la Palabra de Dios, la iglesia de Jesucristo
-                y la comunidad.
+                Fidelidad bíblica, excelencia académica y profunda vida
+                espiritual.
               </p>
             </div>
           </div>
@@ -113,143 +187,255 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BIENVENIDA */}
-      <section className="container-page grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
-        <div>
-          <Eyebrow>Bienvenida</Eyebrow>
-          <h2 className="mt-4 text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
-            Comenzá tu formación hoy
-          </h2>
-          <p className="mt-5 leading-relaxed text-muted">
-            El servicio ministerial exige cada vez más en el mundo actual. La
-            brecha entre la preparación de la iglesia y las necesidades reales
-            aumenta, y por eso desarrollamos una propuesta educativa integral,
-            pensada para acercar la Biblia y la Teología a pastores, líderes,
-            adultos y familias.
-          </p>
-          <p className="mt-4 leading-relaxed text-muted">
-            El Instituto Bíblico Renacer Pentecostal une excelencia académica
-            y profunda vida espiritual, con un recorrido formativo que va
-            desde una Diplomatura en Biblia hasta una Licenciatura en
-            Teología.
-          </p>
-          <div className="mt-8">
-            <Button href="/admision" variant="ghost">
-              Comenzá tu formación hoy
-            </Button>
-          </div>
-        </div>
+      {/* FORMACIÓN BÍBLICA Y TEOLÓGICA */}
+      <section className="container-page py-16 sm:py-20">
+        <Eyebrow>Nuestra propuesta</Eyebrow>
+        <h2 className="mt-4 max-w-2xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
+          Formación bíblica y teológica al servicio de la Iglesia
+        </h2>
+        <p className="mt-5 max-w-2xl leading-relaxed text-muted">
+          Creemos que estudiar teología es mucho más que adquirir
+          conocimientos. Es aprender a interpretar responsablemente las
+          Escrituras, comprender aquello que creemos, crecer en nuestra
+          relación con Dios y prepararnos para servir a la Iglesia y a
+          nuestras comunidades. En INBREP queremos acompañarte en ese proceso
+          mediante una formación accesible, sistemática y comprometida con la
+          realidad de la iglesia local sudamericana.
+        </p>
 
-        <div className="grid grid-cols-2 gap-4">
-          {[
-            { label: "Biblia (AT y NT)" },
-            { label: "Práctica Ministerial" },
-            { label: "Teología Sistemática" },
-            { label: "Teología Práctica" },
-            { label: "Interpretación Bíblica" },
-            { label: "Pensamiento Cristiano" },
-          ].map((area) => (
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {PILARES.map((p) => (
             <div
-              key={area.label}
-              className="rounded-2xl border border-ink/10 bg-paper p-5 text-sm font-medium text-ink-2 shadow-sm"
+              key={p.title}
+              className="rounded-2xl border border-ink/10 bg-paper p-6 shadow-sm"
             >
-              {area.label}
+              <h3 className="font-display text-lg font-semibold text-ink">
+                {p.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{p.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* PROGRAMAS */}
+      {/* UNA FORMACIÓN PARA VOS */}
       <section className="bg-mint py-16 text-ink sm:py-20">
-        <div className="container-page">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <Eyebrow>Oferta académica</Eyebrow>
-              <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-semibold sm:text-4xl">
-                Un camino de crecimiento espiritual y académico
-              </h2>
-            </div>
-            <p className="max-w-sm text-sm leading-relaxed text-ink/70">
-              Descubrí el camino de crecimiento espiritual y académico que se
-              ajusta a tu llamado.
+        <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <Eyebrow>A quién está dirigida</Eyebrow>
+            <h2 className="mt-4 text-balance font-display text-3xl font-semibold sm:text-4xl">
+              Una formación para vos
+            </h2>
+            <p className="mt-5 leading-relaxed text-ink/70">
+              INBREP está abierto a todas las personas que desean crecer en
+              el conocimiento de la Biblia y la teología. No importa en qué
+              etapa de tu camino te encuentres. Queremos ayudarte a seguir
+              creciendo.
             </p>
+            <div className="mt-7">
+              <Button href="/admision" variant="ghost" className="border-ink/25 text-ink hover:border-ink/50 hover:bg-ink/5">
+                Conocé los requisitos de admisión
+              </Button>
+            </div>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {PROGRAMS.map((program, i) => (
-              <div
-                key={program.name}
-                className="flex flex-col rounded-2xl border border-ink/15 bg-white/70 p-7"
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {PERFILES.map((p) => (
+              <li
+                key={p}
+                className="flex items-start gap-3 rounded-2xl border border-ink/15 bg-white/70 p-4 text-sm leading-relaxed"
               >
-                <span className="font-display text-4xl text-ink/60">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-5 font-display text-xl font-semibold">
-                  {program.name}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/70">
-                  {program.desc}
-                </p>
-                <Link
-                  href="/programas"
-                  className="mt-6 text-sm font-semibold text-ember-dark hover:text-ember"
-                >
-                  Ver plan de estudios →
-                </Link>
-              </div>
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember-dark" />
+                {p}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* NOTICIAS */}
+      {/* OFERTA ACADÉMICA */}
       <section className="container-page py-16 sm:py-20">
-        <Eyebrow>Novedades</Eyebrow>
-        <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Últimas noticias y anuncios
+        <Eyebrow tone="ember">Diferentes trayectos</Eyebrow>
+        <h2 className="mt-4 max-w-2xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
+          Nuestra oferta académica
         </h2>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {NEWS.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-ink/10 bg-paper p-6 shadow-sm"
+        <p className="mt-5 max-w-2xl leading-relaxed text-muted">
+          Nuestra propuesta académica integra estudios bíblicos, teológicos y
+          ministeriales mediante programas organizados progresivamente.
+          Podés encontrar trayectos de formación en áreas como:
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {AREAS.map((a) => (
+            <span
+              key={a}
+              className="rounded-full border border-ink/15 bg-paper px-3.5 py-1.5 text-xs font-medium text-ink-2"
             >
-              <span className="rounded-full bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold-dark">
-                {item.tag}
+              {a}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {TRAYECTOS.map((t, i) => (
+            <div
+              key={t.name}
+              className="flex flex-col rounded-2xl border border-ink/10 bg-paper p-7 shadow-sm"
+            >
+              <span className="font-display text-4xl text-ink/25">
+                {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 font-display text-lg font-semibold text-ink">
-                {item.title}
+              <h3 className="mt-5 font-display text-xl font-semibold text-ink">
+                {t.name}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {item.desc}
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                {t.desc}
               </p>
             </div>
           ))}
         </div>
+        <p className="mt-8 text-sm font-semibold text-ember-dark">
+          Planes desde 30 USD.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Button href="/programas" variant="primary">
+            Explorá nuestra oferta académica
+          </Button>
+          <Button href="/admision" variant="ghost">
+            Conocé los aranceles
+          </Button>
+        </div>
       </section>
 
-      {/* TESTIMONIOS */}
+      {/* ¿POR QUÉ ESTUDIAR EN INBREP? */}
       <section className="bg-sun py-16 sm:py-20">
         <div className="container-page">
-          <Eyebrow tone="ember">Voces de la comunidad</Eyebrow>
-          <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
-            Testimonios de estudiantes y egresados
+          <Eyebrow tone="ember">Nuestra identidad</Eyebrow>
+          <h2 className="mt-4 max-w-2xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
+            ¿Por qué estudiar en INBREP?
           </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((i) => (
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {RAZONES.map((r) => (
               <div
-                key={i}
-                className="flex flex-col justify-between rounded-2xl border border-dashed border-ink/15 bg-paper/60 p-6"
+                key={r.title}
+                className="rounded-2xl border border-ink/15 bg-white/70 p-6"
               >
-                <p className="font-display text-lg italic leading-snug text-ink-2/70">
-                  &ldquo;Muy pronto vas a poder leer acá las historias de
-                  nuestros estudiantes, egresados y pastores.&rdquo;
+                <h3 className="font-display text-lg font-semibold text-ink">
+                  {r.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                  {r.desc}
                 </p>
-                <span className="mt-6 text-xs font-semibold uppercase tracking-wider text-muted">
-                  Testimonio próximamente
-                </span>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-2xl border border-ink/15 bg-white/70 p-6">
+              <h3 className="font-display text-lg font-semibold text-ink">
+                Diversidad teológica responsable
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                Nuestro cuerpo docente está integrado por profesores de
+                diferentes tradiciones del cristianismo protestante. Esta
+                diversidad permite conocer distintas perspectivas, dialogar
+                responsablemente y construir convicciones bajo la autoridad
+                de las Escrituras.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-ink/15 bg-white/70 p-6">
+              <h3 className="font-display text-lg font-semibold text-ink">
+                Pentecostales e interdenominacionales
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                Creemos que un verdadero renacer pentecostal está
+                profundamente relacionado con el regreso a las Escrituras, la
+                oración, la obra del Espíritu Santo, la santidad y la misión.
+                Al mismo tiempo, somos una Comunidad Educativa
+                Interdenominacional: participan profesores y estudiantes de
+                diferentes tradiciones cristianas, aprendiendo a dialogar con
+                fidelidad bíblica, humildad y amor cristiano.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <Button href="/nosotros" variant="ghost">
+              Conocé más sobre nosotros
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* INBREP MÁS ALLÁ DEL AULA */}
+      <section className="container-page py-16 sm:py-20">
+        <Eyebrow>Nuestras iniciativas</Eyebrow>
+        <h2 className="mt-4 max-w-2xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
+          INBREP más allá del aula
+        </h2>
+        <p className="mt-5 max-w-2xl leading-relaxed text-muted">
+          Nuestra misión no termina en los programas académicos.
+          Desarrollamos diferentes iniciativas para acompañar a personas,
+          iglesias y comunidades.
+        </p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {INICIATIVAS.map((it) => (
+            <div
+              key={it.name}
+              className="flex flex-col rounded-2xl border border-ink/10 bg-paper p-7 shadow-sm"
+            >
+              <h3 className="font-display text-xl font-semibold text-ink">
+                {it.name}
+              </h3>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                {it.desc}
+              </p>
+              <Link
+                href={it.href}
+                className="mt-6 text-sm font-semibold text-ember-dark hover:text-ember"
+              >
+                {it.cta} →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* COMUNIDAD Y NOVEDADES */}
+      <section className="bg-mint py-16 text-ink sm:py-20">
+        <div className="container-page grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div>
+            <Eyebrow>Una comunidad que trasciende las fronteras</Eyebrow>
+            <h2 className="mt-4 text-balance font-display text-3xl font-semibold sm:text-4xl">
+              Conocé las novedades de INBREP
+            </h2>
+            <p className="mt-5 leading-relaxed text-ink/70">
+              INBREP nació a partir del trabajo conjunto de pastores,
+              teólogos, educadores, profesionales y plantadores de iglesias
+              de Chile y Argentina. Hoy soñamos con convertirnos en una
+              institución académica referente en el Cono Sur, contribuyendo
+              al crecimiento de la Iglesia en toda Sudamérica.
+            </p>
+            <div className="mt-7">
+              <Button href="/comunidad" variant="primary">
+                Sumate a la Comunidad INBREP
+              </Button>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-ink/15 bg-white/70 p-7">
+            <p className="text-sm font-semibold uppercase tracking-wider text-ink/60">
+              Recibí información sobre
+            </p>
+            <ul className="mt-4 space-y-3 text-sm leading-relaxed">
+              {NOVEDADES.map((n) => (
+                <li key={n} className="flex items-start gap-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember-dark" />
+                  {n}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -259,18 +445,23 @@ export default function Home() {
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-ember/15 blur-3xl" />
         <div className="container-page relative flex flex-col items-center gap-6 py-20 text-center sm:py-24">
           <h2 className="max-w-2xl text-balance font-display text-3xl font-semibold sm:text-4xl">
-            Preparate para tu ingreso a INBREP y comenzá tu formación con
-            nosotros
+            Comenzá tu camino de formación
           </h2>
+          <p className="max-w-xl text-balance leading-relaxed text-cream/75">
+            No necesitás tener todos los conocimientos ni todas las
+            respuestas para comenzar. Si deseás comprender más profundamente
+            las Escrituras, fortalecer tu fe y prepararte para servir,
+            queremos acompañarte.
+          </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button href="/admision" variant="primary">
-              Aplicar ahora
+              Quiero estudiar en INBREP
             </Button>
-            <Button href="/programas" variant="secondary">
-              Conocé nuestros programas
+            <Button href="/admision" variant="secondary">
+              Conocé el proceso de admisión
             </Button>
-            <Button href="/programas#plan" variant="secondary">
-              Descargá el plan académico
+            <Button href="/contacto" variant="secondary">
+              Contactanos
             </Button>
           </div>
         </div>

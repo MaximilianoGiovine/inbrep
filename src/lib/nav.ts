@@ -6,16 +6,23 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Programas", href: "/programas" },
+  { label: "Oferta académica", href: "/programas" },
   { label: "Admisión", href: "/admision" },
-  { label: "+Inbrep", href: "/mas-inbrep" },
+];
+
+export const INICIATIVAS_ITEMS: NavItem[] = [
+  { label: "+INBREP", href: "/mas-inbrep" },
   { label: "MissioDei", href: "/missio-dei" },
-  { label: "EBL", href: "/ebl" },
+  { label: "EBL — Escuela Bíblica Local", href: "/ebl" },
+];
+
+export const NAV_ITEMS_END: NavItem[] = [
+  { label: "Comunidad", href: "/comunidad" },
   { label: "Donar", href: "/donar" },
   { label: "Contacto", href: "/contacto" },
 ];
 
-export const VIRTUAL_ITEM: NavItem = {
-  label: "Inbrep Virtual",
-  href: "/virtual",
+export const PRIMARY_CTA: NavItem = {
+  label: "Quiero estudiar",
+  href: "/admision",
 };

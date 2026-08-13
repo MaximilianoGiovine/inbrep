@@ -3,17 +3,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { NAV_ITEMS, VIRTUAL_ITEM } from "@/lib/nav";
+import { useEffect, useRef, useState } from "react";
+import { NAV_ITEMS, NAV_ITEMS_END, INICIATIVAS_ITEMS, PRIMARY_CTA } from "@/lib/nav";
+import { WHATSAPP_URL } from "@/lib/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [iniciativasOpen, setIniciativasOpen] = useState(false);
+  const iniciativasRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [lastPathname, setLastPathname] = useState(pathname);
 
   if (pathname !== lastPathname) {
     setLastPathname(pathname);
     setOpen(false);
+    setIniciativasOpen(false);
   }
 
   useEffect(() => {
@@ -22,6 +26,28 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useEffect(() => {
+    if (!iniciativasOpen) return;
+    function handlePointer(e: MouseEvent) {
+      if (!iniciativasRef.current?.contains(e.target as Node)) {
+        setIniciativasOpen(false);
+      }
+    }
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setIniciativasOpen(false);
+    }
+    document.addEventListener("mousedown", handlePointer);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handlePointer);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [iniciativasOpen]);
+
+  const iniciativasActive = INICIATIVAS_ITEMS.some((item) =>
+    pathname.startsWith(item.href)
+  );
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-teal-dark/95 text-cream backdrop-blur supports-[backdrop-filter]:bg-teal-dark/90">
@@ -46,7 +72,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex">
           {NAV_ITEMS.map((item) => {
             const active =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -54,7 +80,68 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                className={`rounded-full px-2.5 py-2 text-sm font-medium transition-colors ${
+                  active
+                    ? "bg-white/15 text-sun"
+                    : "text-cream/80 hover:bg-white/5 hover:text-cream"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+
+          <div className="relative" ref={iniciativasRef}>
+            <button
+              type="button"
+              onClick={() => setIniciativasOpen((v) => !v)}
+              aria-expanded={iniciativasOpen}
+              aria-haspopup="menu"
+              className={`flex items-center gap-1 rounded-full px-2.5 py-2 text-sm font-medium transition-colors ${
+                iniciativasActive
+                  ? "bg-white/15 text-sun"
+                  : "text-cream/80 hover:bg-white/5 hover:text-cream"
+              }`}
+            >
+              Iniciativas
+              <svg
+                viewBox="0 0 12 8"
+                aria-hidden="true"
+                className={`h-2.5 w-2.5 fill-current transition-transform ${
+                  iniciativasOpen ? "rotate-180" : ""
+                }`}
+              >
+                <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.6" fill="none" />
+              </svg>
+            </button>
+
+            {iniciativasOpen && (
+              <div
+                role="menu"
+                className="absolute left-1/2 top-full mt-2 w-64 -translate-x-1/2 rounded-2xl border border-white/10 bg-teal-dark p-2 shadow-xl"
+              >
+                {INICIATIVAS_ITEMS.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    role="menuitem"
+                    onClick={() => setIniciativasOpen(false)}
+                    className="block rounded-xl px-3.5 py-2.5 text-sm font-medium text-cream/90 transition-colors hover:bg-white/10 hover:text-sun"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {NAV_ITEMS_END.map((item) => {
+            const active = pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`rounded-full px-2.5 py-2 text-sm font-medium transition-colors ${
                   active
                     ? "bg-white/15 text-sun"
                     : "text-cream/80 hover:bg-white/5 hover:text-cream"
@@ -68,10 +155,10 @@ export default function Header() {
 
         <div className="hidden items-center lg:flex">
           <Link
-            href={VIRTUAL_ITEM.href}
+            href={PRIMARY_CTA.href}
             className="rounded-full bg-ember-dark px-4 py-2 text-sm font-semibold text-cream transition-colors hover:bg-ember"
           >
-            {VIRTUAL_ITEM.label}
+            {PRIMARY_CTA.label}
           </Link>
         </div>
 
@@ -124,12 +211,56 @@ export default function Header() {
                 </Link>
               );
             })}
+
+            <span className="mt-3 px-3 text-xs font-semibold uppercase tracking-wider text-cream/50">
+              Iniciativas
+            </span>
+            {INICIATIVAS_ITEMS.map((item) => {
+              const active = pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`rounded-lg px-3 py-3 text-base font-medium ${
+                    active ? "bg-white/15 text-sun" : "text-cream/85"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
+            <span className="mt-3 h-px bg-white/10" />
+
+            {NAV_ITEMS_END.map((item) => {
+              const active = pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`rounded-lg px-3 py-3 text-base font-medium ${
+                    active ? "bg-white/15 text-sun" : "text-cream/85"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
             <Link
-              href={VIRTUAL_ITEM.href}
+              href={PRIMARY_CTA.href}
               className="mt-2 rounded-lg bg-ember-dark px-3 py-3 text-center text-base font-semibold text-cream"
             >
-              {VIRTUAL_ITEM.label}
+              {PRIMARY_CTA.label}
             </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-white/20 px-3 py-3 text-center text-base font-semibold text-cream"
+            >
+              Hablar por WhatsApp
+            </a>
           </nav>
         </div>
       </div>

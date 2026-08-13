@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { NAV_ITEMS, VIRTUAL_ITEM } from "@/lib/nav";
+import { NAV_ITEMS, NAV_ITEMS_END, INICIATIVAS_ITEMS } from "@/lib/nav";
+import { WHATSAPP_URL, CONTACT_EMAIL } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -18,10 +19,10 @@ export default function Footer() {
             INBREP
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
-            Instituto Bíblico Renacer Pentecostal. Formando obreros fieles para
-            la obra del Señor, con excelencia académica y profunda vida
-            espiritual, de forma virtual para toda Chile, Sudamérica y la
-            América hispanohablante.
+            Instituto Bíblico Renacer Pentecostal, una Comunidad Educativa
+            Interdenominacional dedicada a la formación bíblica, teológica y
+            ministerial, 100% virtual para Chile, Sudamérica y la América
+            hispanohablante.
           </p>
           <p className="mt-5 font-display text-base italic text-sun">
             &ldquo;Crecemos en su Palabra con el poder de su Espíritu&rdquo;
@@ -33,7 +34,7 @@ export default function Footer() {
             Navegación
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-cream/75">
-            {NAV_ITEMS.slice(0, 5).map((item) => (
+            {[...NAV_ITEMS, ...NAV_ITEMS_END].map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-cream">
                   {item.label}
@@ -45,21 +46,16 @@ export default function Footer() {
 
         <div>
           <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-sun">
-            Comunidad
+            Iniciativas
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-cream/75">
-            {NAV_ITEMS.slice(5).map((item) => (
+            {INICIATIVAS_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-cream">
                   {item.label}
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href={VIRTUAL_ITEM.href} className="hover:text-cream">
-                {VIRTUAL_ITEM.label}
-              </Link>
-            </li>
           </ul>
         </div>
 
@@ -68,7 +64,21 @@ export default function Footer() {
             Contacto
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-cream/75">
-            <li>info@inbrep.com</li>
+            <li>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-cream">
+                {CONTACT_EMAIL}
+              </a>
+            </li>
+            <li>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cream"
+              >
+                Hablar por WhatsApp
+              </a>
+            </li>
             <li>Modalidad 100% virtual</li>
             <li>Chile · Sudamérica · Hispanoamérica</li>
           </ul>
