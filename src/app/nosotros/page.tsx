@@ -126,7 +126,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Valores */}
-      <section className="bg-ink-2 py-16 text-cream sm:py-20">
+      <section className="bg-mint py-16 text-ink sm:py-20">
         <div className="container-page">
           <Eyebrow>Lo que nos guía</Eyebrow>
           <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-semibold sm:text-4xl">
@@ -136,12 +136,12 @@ export default function NosotrosPage() {
             {VALUES.map((v) => (
               <div
                 key={v.title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7"
+                className="rounded-2xl border border-ink/15 bg-white/70 p-7"
               >
-                <h3 className="font-display text-lg font-semibold text-gold-light">
+                <h3 className="font-display text-lg font-semibold text-ember-dark">
                   {v.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-cream/70">
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">
                   {v.desc}
                 </p>
               </div>
@@ -237,7 +237,7 @@ export default function NosotrosPage() {
       </section>
 
       <section className="container-page pb-20">
-        <div className="flex flex-col items-center gap-5 rounded-3xl bg-ink px-6 py-12 text-center text-cream sm:px-12">
+        <div className="flex flex-col items-center gap-5 rounded-3xl bg-teal-dark px-6 py-12 text-center text-cream sm:px-12">
           <h2 className="max-w-xl text-balance font-display text-2xl font-semibold sm:text-3xl">
             Sumate a esta comunidad educativa interdenominacional
           </h2>

@@ -47,9 +47,9 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-grain relative overflow-hidden bg-ink text-cream">
-        <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-teal/20 blur-3xl" />
+      <section className="bg-grain relative overflow-hidden bg-teal-dark text-cream">
+        <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-ember/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
 
         <div className="container-page relative flex flex-col gap-10 py-20 sm:py-28 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
           <div className="max-w-2xl">
@@ -71,10 +71,10 @@ export default function Home() {
               </Button>
             </div>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-cream/60">
-              <Link href="/admision" className="underline decoration-gold/50 underline-offset-4 hover:text-cream">
+              <Link href="/admision" className="underline decoration-sun/50 underline-offset-4 hover:text-cream">
                 Ir a inscripción
               </Link>
-              <Link href="/donar" className="underline decoration-gold/50 underline-offset-4 hover:text-cream">
+              <Link href="/donar" className="underline decoration-sun/50 underline-offset-4 hover:text-cream">
                 Quiero donar
               </Link>
             </div>
@@ -89,7 +89,7 @@ export default function Home() {
               className="pointer-events-none absolute -top-14 -right-4 h-32 w-auto drop-shadow-2xl sm:-top-16 sm:h-40 lg:-top-20 lg:-right-8 lg:h-48"
             />
             <div className="relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-              <p className="font-display text-2xl italic leading-snug text-gold-light sm:text-3xl">
+              <p className="font-display text-2xl italic leading-snug text-sun sm:text-3xl">
                 &ldquo;Formamos obreros para la obra del Reino&rdquo;
               </p>
               <div className="mt-8 h-px w-full bg-white/10" />
@@ -101,11 +101,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 bg-ink-2/60">
+        <div className="border-t border-white/10 bg-black/15">
           <div className="container-page flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-5 text-xs font-semibold uppercase tracking-wider text-cream/60 sm:text-sm">
             {STRIP.map((item) => (
               <span key={item} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                <span className="h-1.5 w-1.5 rounded-full bg-ember" />
                 {item}
               </span>
             ))}
@@ -160,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* PROGRAMAS */}
-      <section className="bg-ink-2 py-16 text-cream sm:py-20">
+      <section className="bg-mint py-16 text-ink sm:py-20">
         <div className="container-page">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -169,7 +169,7 @@ export default function Home() {
                 Un camino de crecimiento espiritual y académico
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-cream/70">
+            <p className="max-w-sm text-sm leading-relaxed text-ink/70">
               Descubrí el camino de crecimiento espiritual y académico que se
               ajusta a tu llamado.
             </p>
@@ -179,20 +179,20 @@ export default function Home() {
             {PROGRAMS.map((program, i) => (
               <div
                 key={program.name}
-                className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-7"
+                className="flex flex-col rounded-2xl border border-ink/15 bg-white/70 p-7"
               >
-                <span className="font-display text-4xl text-gold/70">
+                <span className="font-display text-4xl text-ink/60">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-5 font-display text-xl font-semibold">
                   {program.name}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-cream/70">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/70">
                   {program.desc}
                 </p>
                 <Link
                   href="/programas"
-                  className="mt-6 text-sm font-semibold text-gold-light hover:text-gold"
+                  className="mt-6 text-sm font-semibold text-ember-dark hover:text-ember"
                 >
                   Ver plan de estudios →
                 </Link>
@@ -229,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIOS */}
-      <section className="bg-cream py-16 sm:py-20">
+      <section className="bg-sun py-16 sm:py-20">
         <div className="container-page">
           <Eyebrow tone="ember">Voces de la comunidad</Eyebrow>
           <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
@@ -255,8 +255,8 @@ export default function Home() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="bg-grain relative overflow-hidden bg-ink text-cream">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
+      <section className="bg-grain relative overflow-hidden bg-teal-dark text-cream">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-ember/15 blur-3xl" />
         <div className="container-page relative flex flex-col items-center gap-6 py-20 text-center sm:py-24">
           <h2 className="max-w-2xl text-balance font-display text-3xl font-semibold sm:text-4xl">
             Preparate para tu ingreso a INBREP y comenzá tu formación con

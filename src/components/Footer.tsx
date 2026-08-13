@@ -4,7 +4,7 @@ import { NAV_ITEMS, VIRTUAL_ITEM } from "@/lib/nav";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-cream">
+    <footer className="bg-teal-dark text-cream">
       <div className="container-page grid gap-10 py-14 sm:py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-2.5 font-display text-xl font-extrabold">
@@ -23,13 +23,13 @@ export default function Footer() {
             espiritual, de forma virtual para toda Chile, Sudamérica y la
             América hispanohablante.
           </p>
-          <p className="mt-5 font-display text-base italic text-gold-light">
+          <p className="mt-5 font-display text-base italic text-sun">
             &ldquo;Crecemos en su Palabra con el poder de su Espíritu&rdquo;
           </p>
         </div>
 
         <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-gold-light">
+          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-sun">
             Navegación
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-cream/75">
@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-gold-light">
+          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-sun">
             Comunidad
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-cream/75">
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-gold-light">
+          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-sun">
             Contacto
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-cream/75">

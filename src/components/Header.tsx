@@ -24,7 +24,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/95 text-cream backdrop-blur supports-[backdrop-filter]:bg-ink/90">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-teal-dark/95 text-cream backdrop-blur supports-[backdrop-filter]:bg-teal-dark/90">
       <div className="container-page flex h-16 items-center justify-between gap-4 sm:h-20">
         <Link
           href="/"
@@ -56,7 +56,7 @@ export default function Header() {
                 href={item.href}
                 className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "bg-white/10 text-gold-light"
+                    ? "bg-white/15 text-sun"
                     : "text-cream/80 hover:bg-white/5 hover:text-cream"
                 }`}
               >
@@ -69,7 +69,7 @@ export default function Header() {
         <div className="hidden items-center lg:flex">
           <Link
             href={VIRTUAL_ITEM.href}
-            className="rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-gold-light"
+            className="rounded-full bg-ember-dark px-4 py-2 text-sm font-semibold text-cream transition-colors hover:bg-ember"
           >
             {VIRTUAL_ITEM.label}
           </Link>
@@ -103,7 +103,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`grid overflow-hidden border-t border-white/10 bg-ink-2 transition-[grid-template-rows] duration-300 ease-out lg:hidden ${
+        className={`grid overflow-hidden border-t border-white/10 bg-teal-dark transition-[grid-template-rows] duration-300 ease-out lg:hidden ${
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
@@ -117,7 +117,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`rounded-lg px-3 py-3 text-base font-medium ${
-                    active ? "bg-white/10 text-gold-light" : "text-cream/85"
+                    active ? "bg-white/15 text-sun" : "text-cream/85"
                   }`}
                 >
                   {item.label}
@@ -126,7 +126,7 @@ export default function Header() {
             })}
             <Link
               href={VIRTUAL_ITEM.href}
-              className="mt-2 rounded-lg bg-gold px-3 py-3 text-center text-base font-semibold text-ink"
+              className="mt-2 rounded-lg bg-ember-dark px-3 py-3 text-center text-base font-semibold text-cream"
             >
               {VIRTUAL_ITEM.label}
             </Link>

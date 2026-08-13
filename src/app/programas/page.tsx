@@ -95,7 +95,7 @@ export default function ProgramasPage() {
       </section>
 
       {/* Áreas de estudio */}
-      <section className="bg-ink-2 py-16 text-cream sm:py-20">
+      <section className="bg-mint py-16 text-ink sm:py-20">
         <div className="container-page">
           <Eyebrow>Formación integral</Eyebrow>
           <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-semibold sm:text-4xl">
@@ -105,7 +105,7 @@ export default function ProgramasPage() {
             {AREAS.map((area) => (
               <span
                 key={area}
-                className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-cream/85"
+                className="rounded-full border border-ink/15 bg-white/70 px-4 py-2 text-sm text-ink/85"
               >
                 {area}
               </span>

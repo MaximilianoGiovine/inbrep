@@ -10,6 +10,7 @@
   --color-gold-dark: #b35a00;
   --color-ember: #fb402f; /* rojo */
   --color-ember-light: #fd8378;
+  --color-ember-dark: #7a1810; /* rojo profundo, para fondos sólidos con texto claro */
   --color-teal: #0093a0; /* turquesa */
   --color-teal-light: #4db6c0;
   --color-teal-dark: #00707a;
@@ -32,6 +33,7 @@
   --color-gold-dark: var(--color-gold-dark);
   --color-ember: var(--color-ember);
   --color-ember-light: var(--color-ember-light);
+  --color-ember-dark: var(--color-ember-dark);
   --color-teal: var(--color-teal);
   --color-teal-light: var(--color-teal-light);
   --color-teal-dark: var(--color-teal-dark);

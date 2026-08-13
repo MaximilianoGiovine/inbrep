@@ -31,7 +31,7 @@ export default function PlaceholderSection({
             className="rounded-2xl border border-ink/10 bg-paper p-6 shadow-sm"
           >
             <div className="mb-3 flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-gold" />
+              <span className="h-2 w-2 rounded-full bg-ember-dark" />
               <span className="rounded-full bg-ink/5 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-muted">
                 Próximamente
               </span>
